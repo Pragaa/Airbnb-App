@@ -1,0 +1,221 @@
+/***************************/
+/*---------- Home ---------*/
+/***************************/
+
+/* --------------------- Slider ----------------------- */
+
+/*---- cover ------*/
+.cover{
+ 
+  overflow: hidden;
+  height: calc(100vh - 70px);
+}
+
+/*----slideshow----*/
+
+/* a unica maneira de fazer com que as imagens 
+corresem em background sem javascript foi com 
+transições usando keyframes e posições relativas 
+e absolutas para conseguir que ficassem todas
+sobrepostas */
+
+.cover-a{
+  z-index:0;
+  width: 100%;
+  height: 100%;
+  background-color: lightgrey;
+  position: relative;
+}
+.cover-a li span{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  animation: imageAnimation 36s linear infinite 0s;
+}
+
+/*delays para que cada imagem comece a animação 
+em alturas diferentes */
+
+.cover-a li:nth-child(1) span{
+  background-image: url(../images/Slider_1.jpg);
+  animation-delay: -2s; 
+}
+.cover-a li:nth-child(2) span{
+  background-image: url(../images/Slider_2.jpg);
+  animation-delay: 7s; 
+}
+.cover-a li:nth-child(3) span{
+  background-image: url(../images/Slider_3.jpg);
+  animation-delay: 16s; 
+}
+.cover-a li:nth-child(4) span{
+  background-image: url(../images/Slider_4.jpg);
+  animation-delay: 25s; 
+}
+
+/* como cada imagem so pode ter 9 segundos senão 
+sobrepõem-se isso significa que a partir dos 25%
+de cada animação as mesmas tem que estar opacas*/ 
+
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    3% { opacity: 1; animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+ 
+/*----------------*/
+
+.cover-b{
+  position: relative;
+  top: -550px; 
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.cov{
+  flex: 0 0 200px;
+  width: 900px;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.texto{
+  flex: 0 0 715px;
+  font-size: 33px;
+  color: white; 
+}
+.formulario{
+  flex-basis:100%;
+  height: 45px;
+  margin-top: 25px;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+}
+.form-a{
+  background-color: white;
+  color: grey;
+  flex-basis: 60px;
+  text-align: center;
+  line-height: 74px;
+}
+.form-b {
+  flex-basis: 250px;
+  background: #ffffff;
+}
+.form-b input[type="text"] {
+  font-size: 16px;
+  line-height: 45px;
+  width: 100%;
+  border: 0px;
+}
+.form-c{
+  flex: 0 0 120px;
+  text-align: center;
+}
+.form-c button{
+  width: 100%;
+  height: 100%;
+  font-size: 19px;
+  cursor: pointer;
+  background-color: #FF5A5F;
+  border:0px solid white;
+  border-radius: 5px;
+  color: white;
+}
+
+
+
+
+
+/*---------- Homes ----------------------*/
+
+.homes{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1030px;
+  margin: 0 auto;
+  padding: 0px 0px 40px 0px;
+}
+.homes-title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 30px;
+  letter-spacing: normal;
+  max-width: 1030px;
+  margin: 40px auto;
+  color: rgb(72, 72, 72);
+  margin-bottom: 0px;
+}
+
+
+.homes-n{
+  margin-top: 20px;
+  width: 246px;
+  padding: 0 5px;
+}
+.homes-n a{
+  display:block;
+  width: 246px;
+  max-height: 300px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  color: #484848;
+  font-weight: 700; 
+}
+.homes-n div:nth-child(1){
+  height: 164px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.homes-n div:nth-child(2){
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 12px; 
+  color: #484848;
+  text-transform: uppercase;
+}
+.homes-n div:nth-child(3){
+  padding-top: 2px;
+  padding-bottom: 4px;
+  font-size: 18px;
+  line-height: 21px;
+}
+.homes-n div:nth-child(4){ 
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-weight: 100;
+  color: grey;
+}
+.homes-n div:nth-child(5){
+  padding-top: 1px;
+  padding-bottom: 5px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.show {
+margin-top: 10px;
+font-size: 14px;
+line-height: 22px; 
+color: #008489;
+font-weight: 100;
+}
+
+/*----------*/

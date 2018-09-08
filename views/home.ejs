@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+  <link rel="stylesheet" type="text/css" href="/styles/navbar.css">
+  <link rel="stylesheet" type="text/css" href="/styles/home.css">
+	
+	<title>Page Title</title>
+
+</head>
+<body>
+  
+  
+	<!------ this is the header menu section ------>
+  <section>
+		<% include partials/navbar %>
+	</section>
+
+
+
+	
+
+	<!-- this is the slider in home with the form section -->
+	<% if(!user){ %>
+	<section class="cover">
+
+		<!-- this is the slider -->
+		<div class="cover-a">
+			<ul>
+				<li><span>d</span></li>
+				<li><span>c</span></li>
+				<li><span>b</span></li>
+				<li><span>a</span></li>
+			</ul>
+		</div>
+
+		<div class="cover-b">
+			<div class="cov">
+				<div class="texto">
+				<h1>Book unique homes and experiences all over the world.</h1>
+				</div>
+				<!-- this is the form that redirects routes -->
+				
+				<form  class="formulario" action="/redirectTo" method="post">
+					<div class=form-a>
+						<i class="fas fa-search fa-lg"></i>
+					</div>
+					<div class=form-b>
+						<input type="text" class="form-control"  name="rota" placeholder='Search for your "Dream" location'>
+					</div>
+					<div class="form-c">
+						<button type="submit" class=""><span>Search</span></button>
+					</div>
+				</form> 
+
+			</div>	
+		</div>
+
+		
+	</section>
+		<% } %>
+
+	
+
+    
+
+	<!-- this is the houses section -->
+	<div class="homes-title">Homes around the world</div>
+
+	<section class="homes">
+
+		<% house.forEach( function(ele){ %>
+		<div class="homes-n">
+
+			<a href="/rooms/<%= ele.id %>">
+			<div style="background: gray"><img src="<%= ele.images[0] %>" alt="home" height="100%" width="100%"></div>
+			<div>
+				<span style="color: rgb(87, 37, 51);">Entire Apartment<span aria-hidden="true"> · </span><%= ele.location %></span>
+			</div>
+			<div><%= ele.name %></div>
+			<div>€<%= ele.price %> per night <span aria-hidden="true"> · </span> Free cancellation</div>
+			<div>
+				<span><%= ele.rating %><span><span aria-hidden="true"> · </span></span></span> 
+			</div>
+			</a>
+			
+		</div>
+	<% }); %>
+</section>
+	
+
+
+	<hr> <!-- A partir deste ponto para baixo é onde cada página será diferente -->
+
+
+
+</body>
+</html>

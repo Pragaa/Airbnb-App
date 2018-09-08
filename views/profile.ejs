@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    <link rel="stylesheet" type="text/css" href="/styles/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/styles/profile.css">
+        
+    <title>Page Title</title>
+        
+  </head>
+<body>
+  
+
+  <!------ this is the header menu section ------>
+  <section>
+		<% include partials/navbar %>
+	</section>
+  
+
+
+<!-- if the user is admin -->
+
+  <% if(user.email == 'admin'){ %>
+
+    <h1>this is admin</h1>
+
+    <h3>add a new location</h3>
+
+    <select name='location'>
+      <% location.forEach(function(ele){ %>
+        <option><%= ele.location %></option>
+      <% }); %>
+    </select>
+
+    <form action="/newLocation" method='post'>
+      <input type="text" name='location' placeholder='location'>
+      <button type="submit">Submit</button>
+    </form>
+
+  <% } %>
+  
+<!--------------------------> 
+
+
+
+
+
+<div class="homes-title">Welcome <%= user.email %> you can add houses here!</div>
+
+<section class="homes">
+    <div class="homes-n">
+  
+      <div style="background: gray"><img src="/" alt="home" height="100%" width="100%"></div>
+      
+      <form action="/newHouse" method="post">
+        <input type="text" name='name' placeholder='name'>
+        <input type="text" name='beds' placeholder='beds'>
+        <input type="text" name='price' placeholder='price'>
+        <input type="text" name='images' placeholder='images'>
+        
+        <label>Location</label>
+        <select name='location'>
+          <% location.forEach(function(ele){ %>
+            <option><%= ele.location %></option>
+          <% }); %>
+        </select>
+      
+        <input type="hidden" name="user">
+      
+        <button type="submit">Submit</button>
+      </form>
+      
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+<!--------------------------> 
+<section class="homes">
+<% user.houses.forEach( function(ele){ %>
+  <div class="homes-n">
+
+    <a href="/rooms/<%= ele.id %>">
+    <div style="background: gray"><img src="<%= ele.images[0] %>" alt="home" height="100%" width="100%"></div>
+    <div>
+      <span style="color: rgb(87, 37, 51);">Entire Apartment<span aria-hidden="true"> · </span><%= ele.location %></span>
+    </div>
+    <div><%= ele.name %></div>
+    <div>€<%= ele.price %> per night <span aria-hidden="true"> · </span> Free cancellation</div>
+    <div>
+      <span><%= ele.rating %><span><span aria-hidden="true"> · </span></span></span> 
+    </div>
+    </a>
+    
+    <form action="/rooms/<%= ele.id %>?_method=PUT" method="POST">
+      <input type="text" name='name' placeholder='<%= ele.name%>'>
+      <input type="text" name='beds' placeholder='<%= ele.beds%>'>
+      <input type="text" name='price' placeholder='<%= ele.price%>'>
+    
+      <button type="submit">Update</button>
+    </form>
+
+    <form action="/rooms/<%= ele.id %>/delete?_method=DELETE" method="POST">
+      <input type = "hidden" name="location" value='<%= ele.location%>' />
+      <button type="submit">Delete</button>
+    </form>
+
+  </div>
+<% }); %>
+</section>
+<!--------------------------> 
+
+
+
+
+
+
+
+</body>
+</html>

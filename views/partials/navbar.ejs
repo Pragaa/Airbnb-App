@@ -1,0 +1,124 @@
+<section class="header">
+<nav class="menu">
+   
+    <a class="logo" href="/"><img width="30px" height="30px" src="/images/Menu_logo.png"></a>
+    <% if(user){ %>
+    <div class="search">
+        <form  class="nav-search" action="/redirectTo" method="post">
+            <i class="fas fa-search fa-lg"></i>
+            <input type="text" class="form-control"  name="rota" placeholder='Search for your "Dream" location'>
+		</form> 			
+    </div>
+    <% } %>
+    <a class="space" href=""></a>
+    
+
+<!--------------- Caso o user esteja loggado corre este codigo -------------------------->
+<% if(user){ %> 
+    <a onmouseover="openNavMenu()" onmouseout="closeNavMenu()" class="profile"><img src=" <%= user.avatar %>" ></a>
+      
+        <div id="dropdown-menu" onmouseover="openNavMenu()" onmouseout="closeNavMenu()" style="display: none">
+            <div class="dropdown-menu">
+                <a class="menu-item"href="/profile"> Profile</a>
+                <a class="menu-item"href="/logout"> Log Out</a>
+            </div>          
+        </div>
+    
+
+    <script>
+        
+        var navMenu = document.getElementById('dropdown-menu');
+        
+        function openNavMenu() { navMenu.style.display = "block"; }
+        function closeNavMenu() { navMenu.style.display = "none"; }
+
+    </script>
+
+
+
+<!--------------- Caso o user não esteja loggado corre este codigo -------------------------->
+<% } else { %>
+    <a onClick="openModal()" class="aceder"> Log In/Register</a>
+
+    <% if (message.length > 0) { %>
+        <div id="modal-wrapper" class="modal" style="display: block">
+    <% } else { %>
+        <div id="modal-wrapper" class="modal">
+    <% } %>        
+            <div class="modal-content">
+                  
+                <div id="modal-login" class="login" onclick="openLogin()">Log In</div>
+                <div id="modal-signup" class="signup" onclick="openSignup()" >Sign Up</div>
+                <span class="modal-close" onclick="closeModal()">x</span>
+                
+                <div class="modal-forms">
+                    <div><%= message %></div>
+                   
+                <% if (message = "") { %>
+                    <form id="login-form" action="/login" method="POST" style="display: none">
+                <% } else { %>
+                    <form id="login-form" action="/login" method="POST" style="display: block">
+                <% } %>
+                        <input type="text" placeholder="username" name="email">
+                        <input type="password" placeholder="Password" name="password">
+                        <button>Log In</button>
+                    </form>
+                             
+                <% if (message = "") { %>
+                    <form id="signup-form" action="/register" method="POST" style="display: block">
+                <% } else { %>
+                    <form id="signup-form" action="/register" method="POST" style="display: none">
+                <% } %>
+                        <input type="text" placeholder="username" name="email">
+                        <input type="password" placeholder="Password" name="password">
+                        <button>Register</button>
+                    </form>
+
+                </div>       
+            </div>      
+        </div>
+    
+    <script>
+
+        var modal = document.getElementById('modal-wrapper');
+        var login = document.getElementById('login-form');
+        var signup = document.getElementById('signup-form');
+
+        
+        /********************* Modal *********************/
+        //esta função abre o modal 
+        function openModal() {  modal.style.display = 'block'; }
+        //esta função fecha o modal
+        function closeModal() { modal.style.display = 'none'; }
+        //esta função é activada sempre que se clicka no modal exterior
+        window.onclick = function(event){
+            if(event.target == modal) { closeModal(); }
+        }
+        
+        /**************** signup/login ******************/
+        
+        function openLogin(){
+            signup.style.display="none";
+            login.style.display="block";
+            //isto muda a cor de fundo dos butões quando clickados
+            document.getElementById('modal-login').style.background = "#fefefe";
+            document.getElementById('modal-signup').style.background = "#e9eaea";        
+        }
+        function openSignup(){
+            signup.style.display="block";
+            login.style.display="none"; 
+            //isto muda a cor de fundo dos butões quando clickados
+            document.getElementById('modal-login').style.background = "#e9eaea";
+            document.getElementById('modal-signup').style.background = "#fefefe";
+        }
+
+    </script>
+
+<% } %>
+
+
+</nav>
+</section>
+
+<section class="header-compensate"></section>
+

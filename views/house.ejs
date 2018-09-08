@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    <link rel="stylesheet" type="text/css" href="/styles/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/styles/house.css">
+        
+    <title>Page Title</title>
+        
+  </head>
+<body>
+  
+  <!------ this is the header menu section ------>
+  <section>
+		<% include partials/navbar %>
+	</section>
+
+
+
+ 
+  <!------ this is the house image section ------>
+  <section id="showcase" style="background-image: url(<%=house.images%>)" >
+      <div class="showcase__icon1 showcase__icon1--md"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i><h5>Save</h5></a></div>
+      <div class="showcase__icon2 showcase__icon2--md"><a href="#"><i class="fa fa-upload" aria-hidden="true"></i><h5>Share</h5></a></div>
+      <div class="showcase__icon3 showcase__icon3--md"><a href="#"><h5>View Photos</h5></a></div>
+    </section>
+
+
+  <!------ this is the house description section ------>
+  <section id="description" class="centered">
+      <div class="description_box1">
+        <div class="type"><a href="">Entire Apartment</a></div>
+
+        <div class="description__location description__location-md">
+          <h1><%= house.name %></h1>
+          <h5><%= house.location %></h5>
+          
+          <div class="description__image"><img src="<%= house.usere.avatar %>" alt="az" style="background-color: gray">
+            <h5><%= house.usere.email %></h5>
+          </div>
+        </div>
+
+        <div class="description__type description__type--md">
+          <ul>
+            <li>6 guests</li>
+            <li><%= house.beds %> beds</li>
+            <li>1 bedroom</li>
+            <li>1 bath</li>
+          </ul>
+        </div>
+        <div class="description__hint">
+          <div class="description__hint-a">
+            <h4>Lorem, ipsum dolor.</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, deleniti!</p>
+          </div>
+          <div class="description__hint-b"></div>
+        </div>
+        <div class="description__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil amet et ea ex tempora, non autem corrupti fuga quibusdam recusandae incidunt, saepe delectus nemo, sint eveniet assumenda nostrum eos aspernatur aliquid! Possimus voluptatum ut officiis neque corporis laudantium, iste non, at eos molestias et eligendi sed quidem atque tempore nam necessitatibus. Esse placeat, autem eaque harum sit sapiente excepturi officia.</div>
+      </div>
+
+      <div class="description_box2">
+        <div class="house__price">
+          <div><strong>€130</strong> per night</div> 
+          <div>***** 208</div>
+        </div>
+        <div class="house_form"></div>
+          
+          <form>
+              <label>Dates</label>
+
+          </form>
+          <h5>Guests</h5>
+          <select name="guests">
+              <option value="Adults">Adults</option>
+              <option value="Children">Children</option>
+              <option value="Infants">Infants</option>  
+          </select>
+          <input type="submit">
+        </div>
+
+      </div>
+    
+  </section>
+
+
+
+</body>
+</html>

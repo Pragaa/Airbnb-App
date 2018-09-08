@@ -1,0 +1,81 @@
+/*******************************/
+/*---------- Location ---------*/
+/*******************************/
+
+
+/*---------- Homes ----------------------*/
+
+.homes{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1030px;
+  margin: 0 auto;
+  padding: 0px 0px 40px 0px;
+}
+.homes-title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 30px;
+  letter-spacing: normal;
+  max-width: 1030px;
+  margin: 40px auto;
+  color: rgb(72, 72, 72);
+  margin-bottom: 0px;
+}
+
+
+.homes-n{
+  margin-top: 20px;
+  width: 246px;
+  padding: 0 5px;
+}
+.homes-n a{
+  display:block;
+  width: 246px;
+  max-height: 300px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  color: #484848;
+  font-weight: 700; 
+}
+.homes-n div:nth-child(1){
+  height: 164px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.homes-n div:nth-child(2){
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 12px; 
+  color: #484848;
+  text-transform: uppercase;
+}
+.homes-n div:nth-child(3){
+  padding-top: 2px;
+  padding-bottom: 4px;
+  font-size: 18px;
+  line-height: 21px;
+}
+.homes-n div:nth-child(4){ 
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-weight: 100;
+  color: grey;
+}
+.homes-n div:nth-child(5){
+  padding-top: 1px;
+  padding-bottom: 5px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.show {
+margin-top: 10px;
+font-size: 14px;
+line-height: 22px; 
+color: #008489;
+font-weight: 100;
+}
+
+/*----------*/

@@ -1,0 +1,210 @@
+*{
+  margin: 0px;
+  padding: 0px;
+
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+
+/*-----*/
+a {
+  text-decoration:none;
+  text-align:center;
+  color:grey;
+  font-size: 14px;
+  color: #484848;
+  line-height: 70px;
+}
+
+
+
+
+/***************************/
+/*-------- Header ---------*/
+/***************************/
+
+.header{
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  background-color: #fefefe;
+}
+.header-compensate {
+  height: 70px;
+}
+
+
+/*-----*/
+.menu{
+  display: flex; 
+  border-bottom: 1px solid lightgrey;
+  height: 70px;
+}
+/******/
+.logo {
+  padding-top: 10px;
+  flex: 0 0 82px;
+}
+/******/
+.search {
+  padding: 15px;
+  padding-left: 0px; 
+  flex: 0 1 420px;
+}
+.nav-search {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #EBEBEB;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+
+.nav-search i {
+  flex-basis: 40px;
+}
+.nav-search input[type="text"] {
+  flex-grow: 1;
+  border: 0;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+/******/
+.space {
+  flex-grow: 1; 
+  cursor: default;
+}
+/******/
+.aceder {
+  padding-right: 11px;
+  cursor: pointer;
+}
+/******/
+.profile {
+  padding: 14px 30px;
+  flex: 0 0 42px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.profile img {
+  background: grey;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 50px;
+}
+
+
+
+/*********************/
+/*-- Dropdown Menu --*/
+/*********************/
+#dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  background: #fefefe;
+  border: 1px solid lightgrey;
+}
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  z-index: 9;
+}
+.menu-item {
+  line-height: 40px;
+}
+.menu-item:hover {
+  background-color: lightgrey;
+}
+
+
+/*****************/
+/*---- Modal ----*/
+/*****************/
+/* isto define o background do modal*/
+.modal {
+  display:  none;
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4) ;
+}
+/* esta é a caixa do form que fica centrada */
+.modal-content {
+  position: relative;
+  width: 450px;
+  margin: 100px auto;
+  background-color: #fefefe;
+  display: flex;
+  flex-wrap: wrap;
+}
+/* isto é o que define os botões */
+.modal-content .login , .modal-content .signup  {
+  flex-basis: 50%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.modal-content .signup {
+  background-color: #e9eaea;
+}
+.modal-close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.modal-forms {
+  padding: 40px;
+  width: 100%;
+  position: relative; 
+}
+
+.modal-forms div {
+  position: absolute;
+  bottom: 130px;
+}
+
+.modal-forms form input{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border: 2px solid #e9eaea;
+  color: #3e3e40;
+  font-size: 14px;
+  outline: none;
+  transform: all 0.5s ease;
+}
+.modal-forms form input:focus{
+  border: 2px solid #34b3a0;
+}
+
+.modal-forms form button{
+  width: 100%;
+  height: 60px;
+  border: 0px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+  background: #34b3a0;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase; 
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+  <link rel="stylesheet" type="text/css" href="/styles/navbar.css">
+  <link rel="stylesheet" type="text/css" href="/styles/location.css">
+        
+  <title>Page Title</title>
+        
+  </head>
+
+<body>
+  
+  <!------ this is the header menu section ------>
+  <section>
+		<% include partials/navbar %>
+	</section>
+
+
+
+
+  
+<!-- this is the houses section --> 
+<div class="homes-title">Airbnb Plus homes in <%= location.location %> </div>
+
+<section class="homes">
+
+  <% location.houses.forEach( function(ele){ %>
+  <div class="homes-n">
+
+    <a href="/rooms/<%= ele.id %>">
+    <div style="background: gray"><img src="<%= ele.images[0] %>" alt="home" height="100%" width="100%"></div>
+    <div>
+      <span style="color: rgb(87, 37, 51);">Entire apartment<span aria-hidden="true"> · </span><%= ele.location %></span>
+    </div>
+    <div><%= ele.name %></div>
+    <div>€<%= ele.price %> per night <span aria-hidden="true"> · </span> Free cancellation</div>
+    <div>
+      <span><%= ele.rating %><span><span aria-hidden="true"> · </span></span></span> 
+    </div>
+    </a>
+    
+  </div>
+<% }); %>
+</section>
+
+
+
+  
+
+
+</body>
+</html>

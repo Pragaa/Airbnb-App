@@ -1,0 +1,354 @@
+
+
+.centered {
+  margin: 0 15px;
+}
+
+
+
+
+/* ------ Showcase ----------------- */
+
+
+#showcase{
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 70px);
+
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.showcase__icon1{
+  position: absolute;
+  top:20px;
+  right:25px;
+}
+.showcase__icon1 a{
+  text-decoration: none;
+  color: white;
+}
+.showcase__icon1 a h5{
+  display: none;
+}
+
+.showcase__icon2{
+  position: absolute;
+  top:20px;
+  right:60px;
+}
+.showcase__icon2 a{
+  text-decoration: none;
+  color: white;
+}
+.showcase__icon2 a h5{
+  display: none;
+}
+
+.showcase__icon3 {
+  position: absolute;
+  bottom:25px;
+  right: 20px;
+}
+.showcase__icon3 a{
+  display: block;
+  width: 120px;
+  height: 35px;
+  background-color: white;
+  color: rgb(90, 88, 88);
+  border:1px solid rgb(245, 226, 226);
+  border-radius: 5px;
+  text-align: center;
+  line-height: 35px; 
+  text-decoration: none;
+}
+
+
+
+
+
+/* ------ Description ----------------- */
+
+#description{
+  max-width: 640px;
+  margin-top: 30px;
+  margin-bottom: 120px;
+  display: flex;
+  
+}
+.description_box1{
+  border-bottom:1px solid  rgb(224, 216, 216);
+  padding-bottom: 20px;
+}
+
+.type a{
+  display: inline-block;
+  text-decoration: none;
+  color:black;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.description__location{  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.description__location h1{
+  flex-basis: 100%;
+  font-size: 25px; 
+}
+
+.description__location h5{
+  flex-grow: 1;
+  line-height: 80px;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.description__location img{
+  width: 45px;
+  border-radius: 30px;
+}
+
+.description__image {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.description__type ul{  
+  list-style:none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.description__type ul li{ 
+  flex-basis: 50%;
+  margin-top: 10px;
+}
+
+.description__type ul li:nth-child(1):before{
+  font-family: 'FontAwesome';
+    content: '\f0c0';
+    color: #484848;
+    margin-right: 5px; 
+}
+.description__type ul li:nth-child(2):before{
+  font-family: 'FontAwesome';
+  content: '\f0c0';
+  color: #484848;
+  margin-right: 5px;  
+}
+.description__type ul li:nth-child(3):before{
+  font-family: 'FontAwesome';
+  content: '\f0c0';
+  color: #484848;
+  margin-right: 5px; 
+}
+.description__type ul li:nth-child(4):before{
+  font-family: 'FontAwesome';
+  content: '\f0c0';
+  color: #484848;
+  margin-right: 5px;  
+}
+
+.description__text{
+  margin-top: 30px;
+}
+
+.description__hint{
+  display: none;
+}
+
+.description_box2{
+  display: none;
+
+  border:1px solid red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------- */
+
+@media(min-width: 700px){
+
+  .centered {
+    margin: auto;
+  }
+
+/* ------ Showcase ----------------- */
+
+.showcase__icon1--md a{
+  display: block;
+  right:25px;
+  width: 100px;
+  height: 35px;
+  background-color: white;
+  color: rgb(90, 88, 88);
+  border:1px solid rgb(245, 226, 226);
+  border-radius: 5px;
+  text-align: center;
+  line-height: 35px; 
+  text-decoration: none;
+}
+.showcase__icon1--md a h5{
+  display: inline;
+  margin-left: 10px;
+}
+
+.showcase__icon2--md{
+  right:145px;
+}
+.showcase__icon2--md a{
+  display: block;
+  width: 100px;
+  height: 35px;
+  background-color: white;
+  color: rgb(90, 88, 88);
+  border:1px solid rgb(245, 226, 226);
+  border-radius: 5px;
+  text-align: center;
+  line-height: 35px; 
+  text-decoration: none;
+}
+.showcase__icon2--md a h5{
+  display: inline;
+  margin-left: 10px;
+}
+
+.showcase__icon3--md{
+  left:25px;
+}
+
+
+
+
+
+/* ------ Description ----------------- */
+
+.description__location-md{
+  flex-direction: column;
+  
+  height: 100px;
+}
+.description__location-md h1{
+  width:85%;
+  flex-basis: 40%;
+  box-sizing: border-box; 
+}
+.description__location-md h5{
+  width:85%;
+  flex-basis: 60%;
+  line-height: 20px;
+  box-sizing: border-box;   
+}
+.description__location-md img{ 
+  width: 60px; 
+}
+
+
+.description__type--md ul{
+  flex-wrap: nowrap;
+}
+.description__type ul li{ 
+  flex-basis: auto;
+  margin-right: 15px;
+}
+
+
+
+.description__hint{
+  display: flex;
+  border:1px solid rgb(224, 216, 216);
+  margin: 20px 0px;
+}
+
+.description__hint-a{
+  flex-grow: 1;
+  padding: 10px;
+ 
+}
+.description__hint-a h4{
+  padding: 5px 0px;
+  font-size: 12px; 
+}
+.description__hint-a p{
+  font-size: 14px; 
+}
+
+.description__hint-b{
+  flex-basis: 80px;
+  margin:7px;
+  margin-right: 0;
+  background-image: url("https://a0.muscache.com/airbnb/static/page3/icon-uc-light-bulb-b34f4ddc543809b3144949c9e8cfcc8d.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+/* ----------------------------------------------- */
+
+@media(min-width: 1120px){
+
+/* ------ Description -------------- */
+#description{
+  max-width: 1048px;
+}
+
+.description_box1{
+  display: block;
+  width: 595px;
+}
+
+.description__hint{
+  display: none;
+}
+
+.description_box2{
+  display: block;
+  width: 335px;
+  height: 345px;
+  margin: 0 auto;
+  padding: 20px;
+
+  border:1px solid  rgb(224, 216, 216);
+}
+
+.house__price {
+  border-bottom: 1px solid  rgb(224, 216, 216);
+  padding-bottom: 10px;
+}
+.house__price div strong{ 
+  font-size: 20px; 
+}
+}
